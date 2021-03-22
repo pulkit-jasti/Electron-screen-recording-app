@@ -22,6 +22,12 @@ h1 {
 	padding-top: 20px;
 }
 
+#screen {
+	text-align: center;
+	padding-top: 40px;
+	text-decoration: underline;
+}
+
 .video-container {
 	width: 100%;
 	padding-top: 20px;
@@ -34,6 +40,7 @@ h1 {
 video {
 	width: 90%;
 	max-width: 700px;
+	max-height: 300px;
 }
 
 .button-container {
@@ -74,8 +81,17 @@ button#start {
 	color: #fff;
 }
 
+button#stop {
+	background-color: #d42222;
+	color: #fff;
+}
+
 button#start:hover {
 	background-color: #298029;
+}
+
+button#stop:hover {
+	background-color: #b32020;
 }
 
 button:hover {

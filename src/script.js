@@ -4,7 +4,7 @@ const { writeFile } = require('fs');
 const { dialog, Menu } = remote;
 
 //
-let mediaRecorder; // MediaRecorder instance to capture footage
+let mediaRecorder;
 const recordedChunks = [];
 //
 
@@ -12,8 +12,7 @@ let startBtn = document.getElementById('start');
 let stopBtn = document.getElementById('stop');
 let source = document.getElementById('source');
 let vid = document.getElementById('vid');
-
-console.log(vid);
+let screenHeading = document.getElementById('screen');
 
 startBtn.addEventListener('click', () => {
 	mediaRecorder.start();
@@ -23,7 +22,7 @@ startBtn.addEventListener('click', () => {
 
 stopBtn.addEventListener('click', () => {
 	mediaRecorder.stop();
-	startBtn.innerText = 'Start';
+	startBtn.innerText = 'Record 🎥';
 	startBtn.style.backgroundColor = '#249c24';
 });
 
@@ -48,15 +47,13 @@ async function getSources() {
 	);
 
 	sourceMenu.popup();
-
-	//console.log(inputSources);
 }
 
 async function streamVideo(streamSource) {
 	console.log(streamSource.name);
 
-	//document.getElementById('source').innerText = 'ghg';
-	source.innerText = streamSource.name;
+	source.innerText = 'Source - ' + streamSource.name;
+	screenHeading.innerText = 'Source => ' + streamSource.name;
 
 	const videoStream = await navigator.mediaDevices.getUserMedia({
 		audio: false,
