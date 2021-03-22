@@ -17,12 +17,14 @@ console.log(vid);
 
 startBtn.addEventListener('click', () => {
 	mediaRecorder.start();
-	startBtn.innerText = 'Recording';
+	startBtn.innerText = 'Recording...';
+	startBtn.style.backgroundColor = '#d42222';
 });
 
 stopBtn.addEventListener('click', () => {
 	mediaRecorder.stop();
 	startBtn.innerText = 'Start';
+	startBtn.style.backgroundColor = '#249c24';
 });
 
 source.addEventListener('click', () => {
